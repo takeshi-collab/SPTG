@@ -1,0 +1,10 @@
+[Unit]
+Description=GCP Egress Guard Periodic Timer (Every 15 minutes)
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=15min
+Unit=egress-guard.service
+
+[Install]
+WantedBy=timers.target

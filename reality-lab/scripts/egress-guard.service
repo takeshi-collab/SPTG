@@ -1,0 +1,12 @@
+[Unit]
+Description=GCP Egress Guard - Monthly Egress Circuit Breaker Service
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/egress-guard.sh
+Environment="MONTHLY_LIMIT_GB=180"
+Environment="EGRESS_IFACE=eth0"
+
+[Install]
+WantedBy=multi-user.target
